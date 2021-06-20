@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "jest",
+    "test:us": "jest --updateSnapshot"
   },
   "dependencies": {
     "@types/react": "^17.0.11",
