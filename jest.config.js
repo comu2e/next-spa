@@ -1,6 +1,8 @@
 module.exports = {
-  "roots": ['<rootDir>/tests'],
-  "transform": {
+  presets: 'ts-jest',
+  testEnvironment: 'node',
+  roots: ['<rootDir>/tests'],
+  transform: {
     '^.+\\.(ts|tsx)$': 'ts-jest'
   },
   "globals": {
