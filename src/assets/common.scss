@@ -1,0 +1,29 @@
+// Header
+header {
+  color: #ffffff;
+  background-color: #333;
+}
+
+nav {
+  padding: 0.3rem;
+
+  a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #ffffff;
+  }
+
+  .dropdown-item {
+    a {
+      color: #333333;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #333333;
+    }
+  }
+}
