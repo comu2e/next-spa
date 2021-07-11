@@ -2,6 +2,14 @@ import React, {useEffect, useState} from "react";
 import {Pagination as BootstrapPagination} from "react-bootstrap";
 import {useRouter} from 'next/router'
 
+
+type Props = {
+    // links:
+    // currentPage:
+    // lastPage:
+}
+
+
 /**
  * ペジネーションコンポーネント
  * @param links
