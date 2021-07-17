@@ -13,6 +13,8 @@ const Layout = ({ children, title = 'title' }) => {
                 <title>{title}</title>
                 <meta charSet="utf-8"/>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+                <meta name="robots" content="noindex" />
+                {/*<meta name="csrf-token" content="{{ csrf_token() }}">    */}
                 {/*<link rel="icon" type="image/x-icon" href={process.env.NEXT_PUBLIC_HB_URL +'//hogehoge'} />*/}
             </Head>
 
@@ -23,6 +25,7 @@ const Layout = ({ children, title = 'title' }) => {
             </Container>
 
             <Footer/>
+
         </>
     )
 }

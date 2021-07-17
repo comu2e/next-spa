@@ -1,11 +1,16 @@
 import React from "react";
 import {Button} from "react-bootstrap";
+import Layout from "../src/components/_layouts/Layout";
 
 const Home = () => {
     return (
-        <div>
-            <Button variant={"primary"}>ああ</Button>
-        </div>
+        <>
+          <Layout>
+            <div>
+              <Button variant={"primary"}>ああ</Button>
+            </div>
+          </Layout>
+        </>
     )
 }
 
