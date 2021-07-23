@@ -1,55 +1,17 @@
 import {Button, Card, Col, Container, Form, Row} from "react-bootstrap";
 import React, {useState} from "react";
 import Router from "next/router";
+import AlertMessage from "../../components/_partials/Alert";
+import {useSetRecoilState} from "recoil";
+import {loginUserState} from "../../states/loginUser";
 
 export const Main = () => {
-
   // 状態管理
   const [hasError, setHasError] = useState(false);
 
-  /**
-   * @param e
-   * @returns {Promise<void>}
-   */
   async function handleSubmit(e) {
     e.preventDefault();
-
-    const body = {
-      email: e.currentTarget.email.value,
-      password: e.currentTarget.password.value,
-    };
-
-    try {
-      const res = await fetch('/api/admin/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
-        credentials: 'include'
-      });
-
-      if (res.status === 200) {
-
-        // リダイレクト前に認証情報をセットしないとチェックができないため
-        try {
-          const user = await loginUser.fetchLoginUser();
-          setLoginUser(user);
-        } catch {
-          setLoginUser(null);
-        }
-
-        await Router.push('/');
-      } else {
-
-        //
-        if(res.status === 422) {
-          setHasError(true);
-        }
-
-        throw new Error(await res.text());
-      }
-    } catch (err) {
-      console.error('An unexpected error happened occurred:', err);
-    }
+    Hoge
   }
 
   return (
@@ -90,4 +52,43 @@ export const Main = () => {
         </Container>
       </div>
   )
+}
+
+export async function Hoge() {
+  const setLoginUser = useSetRecoilState(loginUserState);
+  const body = {
+    email: e.currentTarget.email.value,
+    password: e.currentTarget.password.value,
+  };
+
+  try {
+    const res = await fetch('/api/admin/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+      credentials: 'include'
+    });
+
+    if (res.status === 200) {
+
+      // リダイレクト前に認証情報をセットしないとチェックができないため
+      try {
+        const user = await loginUser.fetchLoginUser();
+        setLoginUser(user);
+      } catch {
+        setLoginUser(null);
+      }
+
+      await Router.push('/');
+    } else {
+
+      if(res.status === 422) {
+        setHasError(true);
+      }
+
+      throw new Error(await res.text());
+    }
+  } catch (err) {
+    console.error('An unexpected error happened occurred:', err);
+  }
 }
