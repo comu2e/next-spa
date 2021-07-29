@@ -1,8 +1,11 @@
 import React from "react";
 import {Button} from "react-bootstrap";
 import Layout from "../src/components/_layouts/Layout";
+import {useRequireLogin} from "../src/hooks/useRequireLogin";
 
 const Home = () => {
+  useRequireLogin();
+  
     return (
         <>
           <Layout>
