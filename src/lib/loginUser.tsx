@@ -11,7 +11,7 @@ export function fetchLoginUser() {
     let loginUser = null;
 
     try {
-      const res  = await fetch('/api/hm_admin/user');
+      const res  = await fetch('/api/hr_admin/user');
       loginUser  = await res.json();
     } catch {
       loginUser  = null;

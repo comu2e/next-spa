@@ -11,7 +11,42 @@ export const Main = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    Hoge
+    const setLoginUser = useSetRecoilState(loginUserState);
+    const body = {
+      email: e.currentTarget.email.value,
+      password: e.currentTarget.password.value,
+    };
+
+    try {
+      const res = await fetch('/api/admin/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+        credentials: 'include'
+      });
+
+      if (res.status === 200) {
+
+        // リダイレクト前に認証情報をセットしないとチェックができないため
+        try {
+          const user = await loginUser.fetchLoginUser();
+          setLoginUser(user);
+        } catch {
+          setLoginUser(null);
+        }
+
+        await Router.push('/');
+      } else {
+
+        if(res.status === 422) {
+          setHasError(true);
+        }
+
+        throw new Error(await res.text());
+      }
+    } catch (err) {
+      console.error('An unexpected error happened occurred:', err);
+    }
   }
 
   return (
@@ -55,40 +90,40 @@ export const Main = () => {
 }
 
 export async function Hoge() {
-  const setLoginUser = useSetRecoilState(loginUserState);
-  const body = {
-    email: e.currentTarget.email.value,
-    password: e.currentTarget.password.value,
-  };
-
-  try {
-    const res = await fetch('/api/admin/auth/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
-      credentials: 'include'
-    });
-
-    if (res.status === 200) {
-
-      // リダイレクト前に認証情報をセットしないとチェックができないため
-      try {
-        const user = await loginUser.fetchLoginUser();
-        setLoginUser(user);
-      } catch {
-        setLoginUser(null);
-      }
-
-      await Router.push('/');
-    } else {
-
-      if(res.status === 422) {
-        setHasError(true);
-      }
-
-      throw new Error(await res.text());
-    }
-  } catch (err) {
-    console.error('An unexpected error happened occurred:', err);
-  }
+  // const setLoginUser = useSetRecoilState(loginUserState);
+  // const body = {
+  //   email: e.currentTarget.email.value,
+  //   password: e.currentTarget.password.value,
+  // };
+  //
+  // try {
+  //   const res = await fetch('/api/admin/auth/login', {
+  //     method: 'POST',
+  //     headers: { 'Content-Type': 'application/json' },
+  //     body: JSON.stringify(body),
+  //     credentials: 'include'
+  //   });
+  //
+  //   if (res.status === 200) {
+  //
+  //     // リダイレクト前に認証情報をセットしないとチェックができないため
+  //     try {
+  //       const user = await loginUser.fetchLoginUser();
+  //       setLoginUser(user);
+  //     } catch {
+  //       setLoginUser(null);
+  //     }
+  //
+  //     await Router.push('/');
+  //   } else {
+  //
+  //     if(res.status === 422) {
+  //       setHasError(true);
+  //     }
+  //
+  //     throw new Error(await res.text());
+  //   }
+  // } catch (err) {
+  //   console.error('An unexpected error happened occurred:', err);
+  // }
 }
