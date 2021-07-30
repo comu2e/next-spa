@@ -4,7 +4,6 @@ import { useSetRecoilState, RecoilRoot} from "recoil";
 import {loginUserState} from "../src/states/loginUser";
 import * as loginUser from "../src/lib/loginUser";
 
-
 const MyApp = ({ Component, pageProps }) => {
 
   return (
