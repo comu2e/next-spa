@@ -20,7 +20,7 @@ export const Main = () => {
     };
 
     try {
-      const res = await fetch('/api/admin/auth/login', {
+      const res = await fetch('/api/hr_admin/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
