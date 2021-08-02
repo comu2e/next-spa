@@ -6,12 +6,14 @@ import {useSetRecoilState} from "recoil";
 import {loginUserState} from "../../states/loginUser";
 
 export const Main = () => {
+  // hooksはトップレベルでしか呼び出せない
+  const setLoginUser = useSetRecoilState(loginUserState);
   // 状態管理
   const [hasError, setHasError] = useState(false);
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const setLoginUser = useSetRecoilState(loginUserState);
+
     const body = {
       email: e.currentTarget.email.value,
       password: e.currentTarget.password.value,
