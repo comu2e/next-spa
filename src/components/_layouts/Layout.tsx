@@ -4,6 +4,7 @@ import Router from "next/router";
 import Header from "./partials/Header";
 import Footer from "./partials/Footer";
 import {Container} from "react-bootstrap";
+import Sidebar from "../_partials/Sidebar";
 
 const Layout = ({ children, title = 'title' }) => {
 
@@ -19,7 +20,7 @@ const Layout = ({ children, title = 'title' }) => {
             </Head>
 
             <Header/>
-
+          <Sidebar />
             <Container>
                 {children}
             </Container>
