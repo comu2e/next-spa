@@ -1,7 +1,9 @@
 import React from "react";
 import Layout from "../../src/components/_layouts/Layout";
 
-const Users = () => {
+const Users = ({ssrData}) => {
+
+  console.log(ssrData.users)
 
   return (
       <>
@@ -29,8 +31,10 @@ export async function getServerSideProps(ctx) {
 
   return {
     props: {
-      users: users
-    }
+      ssrData: {
+        users: users
+      },
+    },
   }
 }
 
