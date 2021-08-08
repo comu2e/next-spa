@@ -1,3 +1,15 @@
+## set up
+```
+$ docker-compose build
+$ docker-compose up
+$ docker-compose exec front-app /bin/ash
+
+#app 
+$ yarn install
+$ yarn dev 
+```
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
