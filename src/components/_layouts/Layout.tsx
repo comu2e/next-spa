@@ -19,13 +19,23 @@ const Layout = ({ children, title = 'title' }) => {
                 {/*<link rel="icon" type="image/x-icon" href={process.env.NEXT_PUBLIC_HB_URL +'//hogehoge'} />*/}
             </Head>
 
-            <Header/>
-          <Sidebar />
-            <Container>
-                {children}
-            </Container>
+          <Header/>
+          {/* Main の背景色*/}
+          <div className="flex bg-gray-100 min-h-screen w-screen">
 
-            <Footer/>
+            <Sidebar />
+
+
+          <Container>
+            {children}
+          </Container>
+
+          </div>
+
+          <Footer/>
+
+
+
 
         </>
     )
