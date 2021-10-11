@@ -8,6 +8,14 @@ import Sidebar from "../_partials/Sidebar";
 
 const Layout = ({ children, title = 'title' }) => {
 
+  const [isLoginPage, setIsLoginPage] = useState(false);
+  const [isMapPage, setIsMapPage] = useState(false);
+
+  useEffect( () => {
+    setIsLoginPage(Router.pathname === '/login');
+    setIsMapPage(Router.pathname === '/estates/map');
+  }, []);
+
     return (
         <>
             <Head>
@@ -23,8 +31,9 @@ const Layout = ({ children, title = 'title' }) => {
           {/* Main の背景色*/}
           <div className="flex bg-gray-100 min-h-screen w-screen">
 
-            <Sidebar />
-
+            { !isLoginPage &&
+                <Sidebar />
+            }
 
           <Container>
             {children}
@@ -32,10 +41,9 @@ const Layout = ({ children, title = 'title' }) => {
 
           </div>
 
+          { !isLoginPage &
           <Footer/>
-
-
-
+          }
 
         </>
     )
