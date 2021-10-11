@@ -35,3 +35,7 @@ yarn-error.log*
 
 # IDE
 /.idea
+
+# tailwind css を使用しないので
+tailwind.config.js
+postcss.config.js
