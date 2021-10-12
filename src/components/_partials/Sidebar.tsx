@@ -7,7 +7,7 @@ import {useState} from "react";
  * @constructor
  */
 const Sidebar = () => {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
