@@ -39,3 +39,6 @@ yarn-error.log*
 # tailwind css を使用しないので
 tailwind.config.js
 postcss.config.js
+
+# memo
+.doc/memo.md
