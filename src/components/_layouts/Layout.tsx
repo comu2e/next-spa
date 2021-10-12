@@ -31,13 +31,19 @@ const Layout = ({ children, title = 'title' }) => {
           <Header/>
           }
 
-
+          <Container fluid>
             { !isLoginPage &&
-                <Sidebar />
+            <Sidebar />
             }
 
-          <Container>
-            {children}
+            <div className="content-box container-fluid d-flex justify-content-center">
+              <Container>
+                {children}
+              </Container>
+            </div>
+
+
+
           </Container>
 
           { !isLoginPage &
