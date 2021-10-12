@@ -6,27 +6,50 @@ import {useState} from "react";
  * Sidebar のコンポーネント
  * @constructor
  */
-const Sidebar = () => {
-  const [show, setShow] = useState(true);
+const Sidebar = ({width, height, children}) => {
+  const [xPosition, setX] = React.useState(-width);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const toggleMenu = () => {
+    if (xPosition < 0) {
+      setX(0);
+    } else {
+      setX(-width);
+    }
+  };
 
+  React.useEffect(() => {
+    setX(0);
+  }, []);
   return (
       <>
-        <Button variant="primary" onClick={handleShow}>
-          Launch
-        </Button>
+        <nav
+            className="sidebar"
+            style={{
+              transform: `translatex(${xPosition}px)`,
+              width: width,
+              minHeight: height
+            }}
+        >
+          <button
+              onClick={() => toggleMenu()}
+              className="toggle-menu"
+              style={{
+                transform: `translate(${width}px, 20vh)`
+              }}
+          ></button>
+          <div className="content">{children}</div>
+        </nav>
 
-        <Offcanvas show={show} onHide={handleClose}>
-          <Offcanvas.Header closeButton>
-            <Offcanvas.Title>Offcanvas</Offcanvas.Title>
-          </Offcanvas.Header>
-          <Offcanvas.Body>
-            Some text as placeholder. In real life you can have the elements you
-            have chosen. Like, text, images, lists, etc.
-          </Offcanvas.Body>
-        </Offcanvas>
+
+        {/*<Offcanvas show={show} onHide={handleClose}>*/}
+        {/*  <Offcanvas.Header closeButton>*/}
+        {/*    <Offcanvas.Title>Offcanvas</Offcanvas.Title>*/}
+        {/*  </Offcanvas.Header>*/}
+        {/*  <Offcanvas.Body>*/}
+        {/*    Some text as placeholder. In real life you can have the elements you*/}
+        {/*    have chosen. Like, text, images, lists, etc.*/}
+        {/*  </Offcanvas.Body>*/}
+        {/*</Offcanvas>*/}
       </>
   )
 

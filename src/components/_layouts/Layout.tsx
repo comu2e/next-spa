@@ -33,7 +33,13 @@ const Layout = ({ children, title = 'title' }) => {
 
           <Container fluid>
             { !isLoginPage &&
-            <Sidebar />
+            <Sidebar width={300} height={"100vh"}>
+              <h1>Nav Item</h1>
+              <h1>Nav Item</h1>
+              <h1>Nav Item</h1>
+              <h1>Nav Item</h1>
+              <h1>Nav Item</h1>
+            </Sidebar>
             }
 
             <div className="content-box container-fluid d-flex justify-content-center">
