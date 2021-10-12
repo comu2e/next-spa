@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col, Nav, NavDropdown, Navbar} from "react-bootstrap";
 import Link from "next/link";
-import {useLoginUser} from "../../../hooks/useLoginUser";
+import {useLoginUser} from "../../hooks/useLoginUser";
 
 const Header = () => {
     const { loginUser } = useLoginUser()

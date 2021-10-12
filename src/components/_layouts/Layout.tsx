@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
 import Head from "next/head";
 import Router from "next/router";
-import Header from "./partials/Header";
-import Footer from "./partials/Footer";
+import Header from "./Header";
+import Footer from "./Footer";
 import {Container} from "react-bootstrap";
 import Sidebar from "../_partials/Sidebar";
 
