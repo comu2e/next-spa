@@ -14,16 +14,19 @@ const Home = () => {
                 <Card.Header>
                   <Nav fill variant="tabs" defaultActiveKey="#first">
                     <Nav.Item>
-                      <Nav.Link href="#first">労務 Active</Nav.Link>
+                      <Nav.Link role="presentation" href="#tab1">労務 Active</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link href="#link">勤怠 Link</Nav.Link>
+                      <Nav.Link role="presentation" href="#tab2">勤怠 Link</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link href="#link">経費申請 Link</Nav.Link>
+                      <Nav.Link role="presentation" href="#tab3">経費申請 Link</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link href="#disabled" disabled>
+                      <Nav.Link role="presentation" href="#tab4">管理者</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                      <Nav.Link role="presentation" href="#disabled" disabled>
                         Disabled
                       </Nav.Link>
                     </Nav.Item>
@@ -37,59 +40,71 @@ const Home = () => {
                     With supporting text below as a natural lead-in to additional content.
                   </Card.Text>
 
-                  <Row className="mb-5">
-                    <Col md={6}>
-                      <Card bg="light">
-                        入社手続き
-                      </Card>
-                    </Col>
-                    <Col md={6}>
-                      <Card bg="light">
-                        退職手続き
-                      </Card>
-                    </Col>
-                  </Row>
+                  <div className="tab-content">
+                    <div role="tabpanel" id="tab1">
+                      <Row className="mb-5">
+                        <Col md={6}>
+                          <Card bg="light">
+                            入社手続き
+                          </Card>
+                        </Col>
+                        <Col md={6}>
+                          <Card bg="light">
+                            退職手続き
+                          </Card>
+                        </Col>
+                      </Row>
 
-                  <Row className="mb-5">
-                    <Col md={6}>
-                      <Card bg="light" className="p-0 h-100">
-                        扶養追加
-                      </Card>
-                    </Col>
-                    <Col md={6}>
-                      <Card bg="light">
-                        住所変更
-                      </Card>
-                    </Col>
-                  </Row>
+                      <Row className="mb-5">
+                        <Col md={6}>
+                          <Card bg="light" className="p-0 h-100">
+                            扶養追加
+                          </Card>
+                        </Col>
+                        <Col md={6}>
+                          <Card bg="light">
+                            住所変更
+                          </Card>
+                        </Col>
+                      </Row>
 
-                  <Row className="mb-5">
-                    <Col md={6}>
-                      <Card bg="light">
-                        氏名変更
-                      </Card>
-                    </Col>
-                    <Col md={6}>
-                      <Card bg="light">
-                        年末調整
-                      </Card>
-                    </Col>
-                  </Row>
+                      <Row className="mb-5">
+                        <Col md={6}>
+                          <Card bg="light">
+                            氏名変更
+                          </Card>
+                        </Col>
+                        <Col md={6}>
+                          <Card bg="light">
+                            年末調整
+                          </Card>
+                        </Col>
+                      </Row>
 
-                  <Row className="mb-5">
-                    <Col md={6}>
-                      <Card bg="light">
-                        Web 給料明細
-                      </Card>
-                    </Col>
-                    <Col md={6}>
-                      <Card bg="light">
-                        あああああああ
-                      </Card>
-                    </Col>
-                  </Row>
+                      <Row className="mb-5">
+                        <Col md={6}>
+                          <Card bg="light">
+                            Web 給料明細
+                          </Card>
+                        </Col>
+                        <Col md={6}>
+                          <Card bg="light">
+                            あああああああ
+                          </Card>
+                        </Col>
+                      </Row>
 
-                  <Button variant="primary">Go somewhere</Button>
+                      <Button variant="primary">Go somewhere</Button>
+                    </div>
+
+                    <div role="tabpanel" id="tab2">
+                      sample
+                    </div>
+
+                    <div role="tabpanel" id="tab3">
+                      3
+                    </div>
+                  </div>
                 </Card.Body>
               </Card>
           </Layout>

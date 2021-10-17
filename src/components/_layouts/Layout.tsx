@@ -42,11 +42,9 @@ const Layout = ({ children, title = 'title' }) => {
             </Sidebar>
             }
 
-            <div className="content-box container-fluid d-flex justify-content-center">
-              <Container>
+              <Container className="container-box">
                 {children}
               </Container>
-            </div>
 
 
 
