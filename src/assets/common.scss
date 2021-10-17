@@ -89,3 +89,56 @@ nav {
 //  border-color: rgba(64, 194, 133, 0.693);
 //  border-left: 0;
 //}
+
+.tab {
+  max-width: 1000px;
+  margin: auto;
+  padding: 30px;
+}
+
+.top-tab {
+  margin-bottom: 100px;
+
+  ul[role="tablist"] {
+    display: flex;
+    padding: 0;
+
+    li {
+      margin-top: 0;
+      margin-bottom: 0;
+      list-style: none;
+      background-color: #ddd;
+
+      a {
+        display: block;
+        padding: 10px 30px;
+        text-decoration: none;
+        color: #000;
+
+        &[aria-selected="true"] {
+          background-color: #000;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  div[role="tabpanel"] {
+    padding: 20px 40px;
+    border: 1px solid #ccc;
+    p {
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    b {
+      font-weight: normal;
+      font-size: 22px;
+    }
+    button {
+      margin-bottom: 20px;
+      padding: 5px 20px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+    }
+  }
+}
