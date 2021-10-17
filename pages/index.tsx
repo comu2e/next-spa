@@ -2,11 +2,10 @@ import React from "react";
 import {Button, Card, Col, Container, Nav, Row} from "react-bootstrap";
 import Layout from "../src/components/_layouts/Layout";
 import {useRequireLogin} from "../src/hooks/useRequireLogin";
-import Tab from "../src/components/top/Tab"
 import Work from "../src/components/top/partials/Work";
 import Manage from "../src/components/top/partials/Manage";
 import Sample from "../src/components/top/partials/Sample";
-import BootstrapTab from "../src/components/top/BootstrapTab";
+import Tab from "../src/components/top/Tab";
 
 
 const Home = () => {
@@ -16,18 +15,7 @@ const Home = () => {
         <>
           <Layout>
 
-            <div className="tab">
-              <Tab
-                  title={['労務', '勤怠', 'Sample']}
-                  content={[
-                    <Work title='sample' />,
-                    <Manage title='sample2' />,
-                      <Sample title='sample3' />
-                  ]}
-              />
-            </div>
-
-            <BootstrapTab />
+            <Tab />
               {/*<Card>*/}
               {/*  <Card.Header>*/}
               {/*    <Nav fill variant="tabs" defaultActiveKey="#first">*/}
