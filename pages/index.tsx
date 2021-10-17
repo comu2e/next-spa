@@ -6,6 +6,7 @@ import Tab from "../src/components/top/Tab"
 import Work from "../src/components/top/partials/Work";
 import Manage from "../src/components/top/partials/Manage";
 import Sample from "../src/components/top/partials/Sample";
+import BootstrapTab from "../src/components/top/BootstrapTab";
 
 
 const Home = () => {
@@ -26,6 +27,7 @@ const Home = () => {
               />
             </div>
 
+            <BootstrapTab />
               {/*<Card>*/}
               {/*  <Card.Header>*/}
               {/*    <Nav fill variant="tabs" defaultActiveKey="#first">*/}
