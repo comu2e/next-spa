@@ -2,6 +2,7 @@ import React from "react";
 import {Button, Card, Col, Container, Nav, Row} from "react-bootstrap";
 import Layout from "../src/components/_layouts/Layout";
 import {useRequireLogin} from "../src/hooks/useRequireLogin";
+import Tab from "../src/components/top/Tab"
 
 
 const Home = () => {
@@ -10,6 +11,15 @@ const Home = () => {
     return (
         <>
           <Layout>
+
+            <Tab
+                title={['sample1', 'sample2', 'sample3']}
+                content={[
+                    '',
+                    ''
+                ]}
+            />
+
               <Card>
                 <Card.Header>
                   <Nav fill variant="tabs" defaultActiveKey="#first">
