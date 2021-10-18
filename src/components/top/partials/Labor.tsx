@@ -1,5 +1,6 @@
 import React, {FC} from 'react'
 import {Button, Card, Col, Row} from "react-bootstrap";
+import Link from 'next/link'
 
 type prop = {
   title: string
@@ -26,7 +27,9 @@ const Labor:FC<prop> = ({title}) => (
             <Row className="mb-5">
               <Col md={6}>
                 <Card bg="light">
-                  入社手続き
+                  <Link href="/labors/join">
+                    入社手続き
+                  </Link>
                 </Card>
               </Col>
               <Col md={6}>
