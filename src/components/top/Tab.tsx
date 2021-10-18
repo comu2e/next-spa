@@ -1,6 +1,7 @@
 import {FC, useState} from "react";
 import {Tab, Tabs} from "react-bootstrap";
 import Sample from "./partials/Sample";
+import ArrayMergeAssoc from "../../services/top/ArrayMergeAssoc";
 
 type prop = {
   title: string[]
@@ -11,15 +12,16 @@ const TopTab:FC<prop> = ({title, content}) => {
 
   const [key, setKey] = useState('home');
 
-  const results = []
+  let results = []
+
+  // TODO::最初にどのタブを選択するかrefあたりを使って管理
+  // TODO::handleイベント
 
   // titleとタブの数が一致している場合
   if (title.length === content.length) {
 
     // [0 => { title: sample, content: Element}, 1 => {..}]
-    for (let i = 0, len = content.length; i < len; i++) {
-      results[i] = { title: title[i], content: content[i]}
-    }
+    results = ArrayMergeAssoc({title, content})
 
   } else {
     // そうでない場合、console上でエラーを履かせる
@@ -27,7 +29,7 @@ const TopTab:FC<prop> = ({title, content}) => {
     console.error('Error: タブの枚数とタイトルの数が一致していません。見直してください。')
   }
 
-  // rows に格納(直接return 内に書くと出力されない
+  // rows に格納(直接return 内に書くと出力されない)
   let rows = []
   { results.map((result: any) => {
 
