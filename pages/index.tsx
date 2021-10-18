@@ -15,7 +15,23 @@ const Home = () => {
         <>
           <Layout>
 
-            <Tab />
+            <div>
+              <Col md="10" className="border">
+                  <Tab
+                  title={['sample1', 'sample2', 'sample3']}
+                  content={[
+                      <Work title="sample1"/>,
+                      <Manage title="sample2" />,
+                      <Sample title="sample3" />,
+                  ]}
+                  >
+
+                  </Tab>
+
+              </Col>
+
+            </div>
+
               {/*<Card>*/}
               {/*  <Card.Header>*/}
               {/*    <Nav fill variant="tabs" defaultActiveKey="#first">*/}
