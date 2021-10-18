@@ -20,8 +20,8 @@ const Home = () => {
                   title={['労務', '経費申請', '管理者']}
                   content={[
                       <Labor title="労務"/>,
-                      <Manage title="管理者" />,
                       <Sample title="経費申請" />,
+                    <Manage title="管理者" />,
                   ]}
                   >
 
