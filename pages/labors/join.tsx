@@ -2,6 +2,7 @@ import {useRequireLogin} from "../../src/hooks/useRequireLogin";
 import Layout from "../../src/components/_layouts/Layout";
 import {Card, Col, Row, Form, FormControl} from "react-bootstrap";
 import React from "react";
+import SearchUser from "../../src/components/labors/join/SearchUser";
 
 /**
  * 入社手続き
@@ -56,50 +57,9 @@ const Join = () => {
           <div className="btn btn-outline-primary">自分で入力する</div>
 
 
-          <table className="table table-striped table-bordered item-va-middle table-search m-0">
-            <tbody>
-            <tr>
-              <th scope="row" className="bg-dark text-white align-middle">sample</th>
-              <td colSpan="3">
-                    <Form.Control type="text" name="address1"/>
-              </td>
-            </tr>
-          {/*  <tr>*/}
-          {/*    <th scope="row" className="bg-dark text-white align-middle">エリア2</th>*/}
-          {/*    <td colSpan="3">*/}
-          {/*      <Form.Row>*/}
+          <SearchUser />
 
-          {/*      </Form.Row>*/}
-          {/*    </td>*/}
-          {/*  </tr>*/}
-          {/*  <tr>*/}
-          {/*    <th scope="row" className="bg-dark text-white align-middle"></th>*/}
-          {/*    <td colSpan="3">*/}
-          {/*      <Form.Row className="align-items-center">*/}
 
-          {/*      </Form.Row>*/}
-          {/*    </td>*/}
-          {/*  </tr>*/}
-          {/*  <tr>*/}
-          {/*    <th scope="row" className="bg-dark text-white align-middle"></th>*/}
-          {/*    <td colSpan="3">*/}
-          {/*      <Form.Row className="align-items-center">*/}
-
-          {/*      </Form.Row>*/}
-          {/*    </td>*/}
-          {/*  </tr>*/}
-          {/*  <tr>*/}
-          {/*    <th scope="row" className="bg-dark text-white align-middle">（㎡）</th>*/}
-          {/*    <td colSpan="3">*/}
-          {/*      <Form.Row className="align-items-center">*/}
-
-          {/*      </Form.Row>*/}
-          {/*    </td>*/}
-          {/*  </tr>*/}
-            </tbody>
-          </table>
-
-          
           {/*<table></table>*/}
         </Layout>
       </>
