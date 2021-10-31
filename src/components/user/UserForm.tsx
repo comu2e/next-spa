@@ -36,11 +36,11 @@ const UserForm = () => {
         setHasError(true)
       }
 
-      console.log(formData)
-      // await Router.push('/manages/users');
+      await Router.push('/users');
 
     } catch (err) {
       console.error('An unexpected error happened occurred:', err);
+      console.log(err.error)
     }
   }
 
@@ -124,10 +124,12 @@ const UserForm = () => {
                     <div>ここに本人確認書類</div>
                     <small>運転免許証、パスポート、身体障害者手帳、在留カード、特別永住者証明書等の画像</small>
 
+                    <div className="d-flex justify-content-center mt-3">
+                      <Button variant="primary" type="submit">登録する</Button>
+                    </div>
+
                   </Col>
                 </Row>
-
-                <Button variant="primary" type="submit">登録する</Button>
               </Container>
 
             </Card.Body>
