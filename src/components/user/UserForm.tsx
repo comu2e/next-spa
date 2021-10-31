@@ -35,6 +35,8 @@ const UserForm = () => {
       if (res.status === 422) {
         setHasError(true)
       }
+
+      console.log(formData)
       // await Router.push('/manages/users');
 
     } catch (err) {
