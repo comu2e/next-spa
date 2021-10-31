@@ -15,7 +15,7 @@ const UserForm = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    
+
     const formData = {
       last_name: e.currentTarget.last_name.value,
       fast_name: e.currentTarget.fast_name.value,
