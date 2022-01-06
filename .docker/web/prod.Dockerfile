@@ -4,7 +4,8 @@ RUN apk update && \
     apk add git make g++ && \
     apk add --no-cache curl && \
     curl -o- -L https://yarnpkg.com/install.sh | sh && \
-    yarn global add create-next-app
+    yarn global add create-next-app \
+
 COPY ../../ /app
 
 ENV TZ Asia/Tokyo
