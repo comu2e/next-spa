@@ -2,6 +2,7 @@ import AlertMessage from "../_partials/Alert";
 import {Button, Card, Col, Container, Form, Row} from "react-bootstrap";
 import React, {useEffect, useState} from "react";
 import Router from "next/router";
+import {Simulate} from "react-dom/test-utils";
 
 
 const UserForm = () => {
@@ -24,24 +25,42 @@ const UserForm = () => {
       email: e.currentTarget.email.value,
     };
 
-    try {
-      const res = await fetch('/api/hr_admin/users/create', {
+    // try {
+    //   const res = await fetch('/api/hr_admin/users/create', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify(formData),
+    //     credentials: 'include'
+    //   });
+    //
+    //   let user = res.json()
+    //
+    //   if (res.status === 422) {
+    //     setHasError(true)
+    //   }
+    //
+    //   if (res.status !== 422) {
+    //     await Router.push('/users');
+    //   }
+    //
+    // } catch (err) {
+    //   console.log(err.response)
+    //
+    //   console.error('An unexpected error happened occurred:', err);
+    // }
+
+      await fetch('/api/hr_admin/users/create', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
         credentials: 'include'
-      });
+      }).then(response => {
 
-      if (res.status === 422) {
-        setHasError(true)
-      }
+      }).catch (e => {
+        // console.error('通信に失敗しました', e)
 
-      await Router.push('/users');
-
-    } catch (err) {
-      console.error('An unexpected error happened occurred:', err);
-      console.log(err.error)
-    }
+        console.log(e.response.data.error)
+      })
   }
 
   return (
